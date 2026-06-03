@@ -1,8 +1,2 @@
-export * from './Avatar';
-export * from './Badge';
-export * from './Button';
-export * from './Card';
-export * from './Input';
-export * from './Modal';
-export * from './Sidebar';
-export * from './Table';
+// Re-export the modern UI components barrel
+export * from './ui'

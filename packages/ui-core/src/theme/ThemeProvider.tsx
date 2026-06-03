@@ -10,7 +10,7 @@ interface ThemeContextType {
   updateTheme: (newConfig: Partial<TrimindsConfig>) => void
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+export const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({
   children,

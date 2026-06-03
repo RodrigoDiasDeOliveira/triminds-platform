@@ -1,3 +1,50 @@
+# Triminds UI Core
+
+Biblioteca de componentes e Design System da Triminds.
+
+## Instalação
+
+```bash
+pnpm add @triminds/ui-core
+```
+
+## Uso Básico
+
+```tsx
+import { Button, Card, ThemeProvider } from '@triminds/ui-core';
+
+function App() {
+  return (
+    <ThemeProvider>
+      <Card>
+        <Button>Clique aqui</Button>
+      </Card>
+    </ThemeProvider>
+  );
+}
+```
+
+## Scripts
+
+- `pnpm dev` → Desenvolvimento
+
+- `pnpm build` → Build completo
+
+- `pnpm ui-core:build` → Build apenas da UI
+
+- `pnpm test` → Executa testes
+
+## Roadmap
+
+- Componentes base
+
+- Sistema de temas
+
+- Storybook
+
+- DataTable avançada
+
+- Patterns completos
 <img width="1536" height="1024" alt="ChatGPT Image 2 de jun  de 2026, 11_48_33" src="https://github.com/user-attachments/assets/71b45feb-79fe-4d71-a635-32df23dbcabc" />
 
 

@@ -5,4 +5,4 @@ export * from './satellite';
 export * from './ThemeProvider';
 export * from './createTheme';
 export * from './types';
-export * from './useTheme';
+// `useTheme` is exported from ThemeProvider to avoid duplicate exports

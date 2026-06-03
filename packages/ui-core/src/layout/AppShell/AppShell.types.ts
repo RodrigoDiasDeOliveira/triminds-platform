@@ -1,19 +1,19 @@
-import React from 'react';
+import type { ReactNode } from 'react'
 
 export type AppShellProps = {
-  header?: React.ReactNode;
-  sidebar?: React.ReactNode;
-  children: React.ReactNode;
+  header?: ReactNode
+  sidebar?: ReactNode
+  children: ReactNode
 
   /**
    * controla comportamento visual
    */
-  variant?: 'default' | 'compact' | 'fullscreen';
+  variant?: 'default' | 'compact' | 'fullscreen'
 
   /**
    * permite apps como VectorAI mudarem layout
    */
-  density?: 'comfortable' | 'compact';
+  density?: 'comfortable' | 'compact'
 
-  className?: string;
-};
+  className?: string
+}
