@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ocl theme — dark slate logistics palette (RGB triples) */
+  --color-primary: 14 165 233;
+  --color-primary-foreground: 255 255 255;
+  --color-secondary: 71 85 105;
+  --color-secondary-foreground: 226 232 240;
+  --color-accent: 30 41 59;
+  --color-accent-foreground: 56 189 248;
+  --color-background: 15 23 42;
+  --color-foreground: 226 232 240;
+  --color-card: 30 41 59;
+  --color-border: 51 65 85;
+  --color-input: 51 65 85;
+  --color-muted: 30 41 59;
+  --color-muted-foreground: 148 163 184;
+  --color-destructive: 239 68 68;
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.375rem;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: rgb(var(--color-background));
+}
