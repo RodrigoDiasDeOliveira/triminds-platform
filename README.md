@@ -1,62 +1,190 @@
-# Triminds UI Core
+# Triminds Platform
 
-Biblioteca de componentes e Design System da Triminds.
+The official Design System and Frontend Platform of Triminds.
 
-## Instalação
+## Overview
+
+Triminds Platform is a shared UI ecosystem designed to accelerate the development of all Triminds products through a unified Design System, reusable components, centralized theming, and modern frontend architecture.
+
+The platform provides:
+
+* Consistent user experience across products
+* Shared UI components
+* Multi-theme support
+* Accessibility-first design
+* High performance and scalability
+* Reduced frontend technical debt
+
+---
+
+## Why Triminds Platform?
+
+After developing multiple products such as:
+
+* OCL Logistics
+* Satellite Classification Platform
+* AI Agents
+* Vector AI
+* Future commercial products
+
+we identified recurring challenges:
+
+* UI inconsistency
+* Duplicate components
+* Different frontend architectures
+* Slow delivery of new products
+* Weak brand standardization
+
+Triminds Platform solves these issues by creating a single source of truth for frontend development.
+
+---
+
+## Core Principles
+
+### Design System First
+
+Every component follows a centralized design language.
+
+### Composition over Configuration
+
+Small reusable primitives compose complex interfaces.
+
+### Accessibility by Default
+
+Built on Radix UI primitives.
+
+### Type Safety
+
+Strict TypeScript typing.
+
+### Performance
+
+* Tree shaking
+* Code splitting
+* Optimized bundles
+* Vite library mode
+
+### Multi-product Theming
+
+Support for independent themes:
+
+* OCL
+* Satellite
+* Vector AI
+* Future Triminds products
+
+---
+
+## Technology Stack
+
+| Layer           | Technology            |
+| --------------- | --------------------- |
+| Framework       | React 19              |
+| Language        | TypeScript            |
+| Styling         | Tailwind CSS v4       |
+| Components      | Radix UI              |
+| Variants        | CVA                   |
+| Forms           | React Hook Form + Zod |
+| Build           | Vite                  |
+| Monorepo        | Turborepo             |
+| Package Manager | pnpm                  |
+| Testing         | Vitest + RTL          |
+| Documentation   | Storybook (planned)   |
+
+---
+
+## Project Structure
 
 ```bash
-pnpm add @triminds/ui-core
+triminds-platform/
+├── apps/
+│   └── demo/
+│
+├── packages/
+│   ├── ui-core/
+│   ├── ui-themes/
+│   └── shared-utils/
+│
+├── docs/
+├── .github/
+└── turbo.json
 ```
 
-## Uso Básico
+---
+
+## Quick Start
+
+```bash
+pnpm install
+
+pnpm dev
+
+pnpm build
+```
+
+---
+
+## Example
 
 ```tsx
 import { Button, Card, ThemeProvider } from '@triminds/ui-core';
 
-function App() {
+export default function App() {
   return (
-    <ThemeProvider>
-      <Card>
-        <Button>Clique aqui</Button>
+    <ThemeProvider theme="satellite">
+      <Card variant="elevated">
+        <Button variant="primary">
+          Launch Mission
+        </Button>
       </Card>
     </ThemeProvider>
   );
 }
 ```
 
-## Scripts
-
-- `pnpm dev` → Desenvolvimento
-
-- `pnpm build` → Build completo
-
-- `pnpm ui-core:build` → Build apenas da UI
-
-- `pnpm test` → Executa testes
+---
 
 ## Roadmap
 
-- Componentes base
+### Phase 1
 
-- Sistema de temas
+* Design Tokens
+* Theme Provider
+* Core Components
+* Initial Product Integration
 
-- Storybook
+### Phase 2
 
-- DataTable avançada
+* Storybook
+* DataTable
+* Charts
+* AI Components
+* Dark Mode
 
-- Patterns completos
-<img width="1536" height="1024" alt="ChatGPT Image 2 de jun  de 2026, 11_48_33" src="https://github.com/user-attachments/assets/71b45feb-79fe-4d71-a635-32df23dbcabc" />
+### Phase 3
+
+* React Native Support
+* Tauri Support
+* Figma Token Sync
+
+---
+
+## Documentation
+
+* docs/architecture.md
+* docs/adr/
+
+---
+
+## License
+
+Copyright © Triminds.
+All rights reserved.
 
 
 # Triminds Platform
 
 **Internal UI Framework** developed by Triminds to standardize and accelerate the development of all internal applications.
-
----
-
-## 🎯 Goal
-
-Create a consistent, reusable, and easily adaptable **internal design system** that eliminates code duplication and ensures a unified user experience across all applications.
 
 ---
 
@@ -68,94 +196,6 @@ Create a consistent, reusable, and easily adaptable **internal design system** t
 - **Fully configurable** per application
 - **Monorepo** architecture with Turborepo + pnpm
 - **Unit testing** included (Vitest)
-
----
-
-## 📁 Project Structure
-
-```bash
-triminds-platform/
-├── apps/                    # Applications (ex: dashboard, client-portal, etc.)
-├── packages/
-│   └── ui-core/             # ← Main UI Framework
-│       ├── src/
-│       │   ├── components/
-│       │   ├── layout/
-│       │   ├── theme/
-│       │   └── utils/
-│       └── package.json
-├── turbo.json
-├── pnpm-workspace.yaml
-└── README.md
-
-🚀 Installation & Setup
-1. Install dependencies
-Bashpnpm install
-2. Development
-Bash# Run UI Core in watch mode
-pnpm --filter @triminds/ui-core dev
-
-# Run all apps
-pnpm dev
-3. Build
-Bashpnpm build:ui          # Build only the UI Core
-pnpm build             # Full build
-
-📦 How to Use @triminds/ui-core
-Install in your application
-Bashpnpm add @triminds/ui-core
-Basic Usage Example
-tsximport { ThemeProvider, Button, Card, AppShell } from '@triminds/ui-core'
-
-const projectConfig = {
-  theme: {
-    colors: {
-      primary: '#7c3aed',        // Purple example
-    },
-    radius: {
-      lg: '12px'
-    }
-  },
-  branding: {
-    companyName: "Triminds OCL"
-  }
-}
-
-function App() {
-  return (
-    <ThemeProvider initialConfig={projectConfig}>
-      <AppShell>
-        <Button variant="default" size="lg">
-          Hello World
-        </Button>
-
-        <Card>
-          <h2>My Card</h2>
-        </Card>
-      </AppShell>
-    </ThemeProvider>
-  )
-}
-
-🛠️ Tech Stack
-
-React + TypeScript
-Tailwind CSS v4
-Radix UI (Headless primitives)
-Class Variance Authority (for variants)
-Vitest + Testing Library
-Turborepo (Monorepo)
-
-
-📋 Roadmap
-
- Storybook documentation
- Advanced components (Charts, DataTable, Upload Zone, etc.)
- Full dark mode support
- Form integration (React Hook Form + Zod)
- Complete Example App
- Automated versioning and releases
-
 
 👨‍💻 Contributing
 
