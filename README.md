@@ -4,7 +4,7 @@ Biblioteca de componentes e Design System da Triminds.
 
 ## Instalação
 
-```bash
+```
 pnpm add @triminds/ui-core
 ```
 
@@ -73,7 +73,7 @@ Create a consistent, reusable, and easily adaptable **internal design system** t
 
 ## 📁 Project Structure
 
-```bash
+
 triminds-platform/
 ├── apps/                    # Applications (ex: dashboard, client-portal, etc.)
 ├── packages/
@@ -90,20 +90,20 @@ triminds-platform/
 
 🚀 Installation & Setup
 1. Install dependencies
-Bashpnpm install
-2. Development
-Bash# Run UI Core in watch mode
+2. pnpm install
+3. Development
+Run UI Core in watch mode
 pnpm --filter @triminds/ui-core dev
 
 # Run all apps
 pnpm dev
 3. Build
-Bashpnpm build:ui          # Build only the UI Core
+pnpm build:ui          # Build only the UI Core
 pnpm build             # Full build
 
 📦 How to Use @triminds/ui-core
 Install in your application
-Bashpnpm add @triminds/ui-core
+pnpm add @triminds/ui-core
 Basic Usage Example
 tsximport { ThemeProvider, Button, Card, AppShell } from '@triminds/ui-core'
 
